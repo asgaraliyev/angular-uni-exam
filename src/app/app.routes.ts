@@ -6,6 +6,7 @@ import { MainLayoutComponent } from './core/layouts/main-layout/main-layout.comp
 import { LessonTableComponent } from './modules/lesson/components/lesson-table/lesson-table.component';
 import { NewLessonComponent } from './modules/lesson/components/new-lesson/new-lesson.component';
 import { EditLessonComponent } from './modules/lesson/components/edit-lesson/edit-lesson.component';
+import { ExamTableComponent } from './modules/exam/components/exam-table/exam-table.component';
 
 export const routes: Routes = [
     {
@@ -49,6 +50,30 @@ export const routes: Routes = [
             },
             {
                 path: "lessons/:id",
+                component: EditLessonComponent,
+            },
+
+            
+
+
+
+            {
+                path: "exams",
+                component: ExamTableComponent,
+            },
+            {
+                path: "",
+                pathMatch: "full",
+                redirectTo: "exams"
+            },
+            {
+                path: "exams/new",
+                component: NewLessonComponent,
+                pathMatch: "full"
+
+            },
+            {
+                path: "exams/:id",
                 component: EditLessonComponent,
             },
 

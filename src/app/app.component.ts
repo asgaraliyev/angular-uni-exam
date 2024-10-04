@@ -4,11 +4,12 @@ import { MainLayoutComponent } from './core/layouts/main-layout/main-layout.comp
 import { CommonModule } from '@angular/common';
 import { StudentModule } from './modules/student/student.module';
 import { LessonModule } from './modules/lesson/student.module';
+import { ExamModule } from './modules/exam/exam.module';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet,MainLayoutComponent,CommonModule,StudentModule,LessonModule],
+  imports: [RouterOutlet,MainLayoutComponent,CommonModule,StudentModule,LessonModule,ExamModule],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
 })

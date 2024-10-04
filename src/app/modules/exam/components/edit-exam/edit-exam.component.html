@@ -1,6 +1,6 @@
 <div class="form-container">
-    <form [formGroup]="myForm" class="add-student flex flex-col" (ngSubmit)="submitHandler()">
-        <h3>Add new student</h3>
+    <form [formGroup]="myForm" class="edit-student" (ngSubmit)="submitHandler()">
+        <h3>Edit student </h3>
         <mat-form-field appearance="fill">
             <mat-label>First name</mat-label>
             <input matInput formControlName="firstName" required>
@@ -19,6 +19,6 @@
             <mat-error *ngIf="myForm.get('grade')?.hasError('max')">Grade cannot be bigger than 11</mat-error>
         </mat-form-field>
     
-        <button mat-raised-button color="primary" type="submit" [disabled]="myForm.invalid">Add student</button>
+        <button mat-raised-button color="primary" type="submit" [disabled]="myForm.invalid">Edit student</button>
     </form>
 </div>

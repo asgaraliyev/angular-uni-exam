@@ -1,0 +1,46 @@
+<div class="flex flex-row justify-between">
+    <h3>Lessons</h3>
+    <button mat-raised-button color="primary" (click)="addNewLessonHandler()">Add new lesson</button>
+</div>
+<div class="table-container">
+    <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+        <ng-container matColumnDef="id">
+            <th mat-header-cell *matHeaderCellDef> Lesson ID </th>
+            <td mat-cell *matCellDef="let lesson"> {{lesson.id}} </td>
+        </ng-container>
+    
+        <ng-container matColumnDef="name">
+            <th mat-header-cell *matHeaderCellDef> Name </th>
+            <td mat-cell *matCellDef="let lesson"> {{lesson.name}} </td>
+        </ng-container>
+        <ng-container matColumnDef="grade">
+            <th mat-header-cell *matHeaderCellDef> Grade </th>
+            <td mat-cell *matCellDef="let lesson"> {{lesson.grade}} </td>
+        </ng-container>
+        <ng-container matColumnDef="teacherFirstName">
+            <th mat-header-cell *matHeaderCellDef> Teacher firstname </th>
+            <td mat-cell *matCellDef="let lesson"> {{lesson.teacherFirstName}} </td>
+        </ng-container>
+        <ng-container matColumnDef="teacherLastName">
+            <th mat-header-cell *matHeaderCellDef> Teacher lastname </th>
+            <td mat-cell *matCellDef="let lesson"> {{lesson.teacherLastName}} </td>
+        </ng-container>
+    
+    
+        <ng-container matColumnDef="edit">
+            <th mat-header-cell *matHeaderCellDef> Edit </th>
+            <td mat-cell *matCellDef="let lesson">
+                <mat-icon class="clickable" (click)="editLesson(lesson.id)" fontIcon="edit"></mat-icon>
+            </td>
+        </ng-container>
+        <ng-container matColumnDef="delete">
+            <th mat-header-cell *matHeaderCellDef> Delete </th>
+            <td mat-cell *matCellDef="let lesson">
+                <mat-icon class="clickable" color="warn" (click)="deleteLesson(lesson.id)" fontIcon="delete"></mat-icon>
+            </td>
+        </ng-container>
+    
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+</div>

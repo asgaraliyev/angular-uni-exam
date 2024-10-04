@@ -1,0 +1,30 @@
+<div class="form-container">
+    <form [formGroup]="myForm" class="edit-lesson flex flex-col" (ngSubmit)="submitHandler()">
+        <h3>Add new lesson</h3>
+        <mat-form-field appearance="fill">
+            <mat-label>Name</mat-label>
+            <input matInput formControlName="name" required>
+            <mat-error *ngIf="myForm.get('name')?.hasError('required')">Name is required.</mat-error>
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+            <mat-label>Grade</mat-label>
+            <input matInput formControlName="grade" min="1" max="11" required>
+            <mat-error *ngIf="myForm.get('grade')?.hasError('required')">Grade is required</mat-error>
+            <mat-error *ngIf="myForm.get('grade')?.hasError('min')">Grade must be at least 1</mat-error>
+            <mat-error *ngIf="myForm.get('grade')?.hasError('max')">Grade cannot be bigger than 11</mat-error>
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+            <mat-label>Teacher firstname</mat-label>
+            <input matInput formControlName="teacherFirstName" required>
+            <mat-error *ngIf="myForm.get('teacherFirstName')?.hasError('required')">Teacher firstname is
+                required.</mat-error>
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+            <mat-label>Teacher lastname</mat-label>
+            <input matInput formControlName="teacherLastName" required>
+            <mat-error *ngIf="myForm.get('teacherLastName')?.hasError('required')">Teacher lastname is required.</mat-error>
+        </mat-form-field>
+    
+        <button mat-raised-button color="primary" type="submit" [disabled]="myForm.invalid">Add lesson</button>
+    </form>
+</div>

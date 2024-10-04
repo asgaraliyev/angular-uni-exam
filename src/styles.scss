@@ -1,1 +1,59 @@
-/* You can add global styles to this file, and also import other style files */
+// /* You can add global styles to this file, and also import other style files */
+
+// html, body { height: 100%!important; }
+// body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+.clickable {
+    cursor: pointer;
+}
+
+.w-full {
+    width: 100% !important;
+}
+
+.flex {
+    display: flex !important;
+}
+
+.flex-row {
+    flex-direction: row !important;
+}
+
+.flex-col {
+    flex-direction: column !important;
+}
+
+.items-center {
+    align-items: center !important;
+}
+
+.justify-between {
+    justify-content: space-between !important;
+}
+
+.justify-center {
+    justify-content: center !important;
+}
+
+.h-vh {
+    height: 100vh !important;
+}
+
+.min-h-vh {
+    min-height: 100vh !important;
+}
+
+.form-container {
+    max-width: 500px;
+    text-align: center;
+    margin: auto;
+}
+
+.table-container {
+    width: 100%;
+    overflow-x: auto;
+
+    table {
+        width: 100%;
+        max-width: 90vw;
+    }
+}

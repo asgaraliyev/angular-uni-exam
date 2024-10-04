@@ -1,0 +1,40 @@
+<mat-sidenav-container class=" min-h-vh">
+    <mat-sidenav #sidenav [mode]="'over'">
+        <div class="flex flex-row items-center justify-between">
+            <div></div>
+            <button *ngIf="sidenav.opened" (click)="sidenav.toggle()" mat-icon-button>
+                <mat-icon>close</mat-icon>
+            </button>
+        </div>
+        <app-menu-list></app-menu-list>
+    </mat-sidenav>
+
+    <mat-sidenav-content class="min-h-vh"  >
+        <div>
+            <mat-toolbar id="header" class="flex flex-row items-center justify-between w-full">
+                <div class="flex flex-row items-center space-between">
+                    <button *ngIf="!sidenav.opened" (click)="sidenav.toggle()" mat-icon-button>
+                        <mat-icon>menu</mat-icon>
+                    </button>
+                    <button *ngIf="sidenav.opened" (click)="sidenav.toggle()" mat-icon-button>
+                        <mat-icon>close</mat-icon>
+                    </button>
+            
+                    <!-- <span>My App</span> -->
+                </div>
+                <div>
+                    <span></span>
+                    <button mat-icon-button class=" favorite-icon">
+                        <mat-icon>favorite</mat-icon>
+                    </button>
+                    <button mat-icon-button>
+                        <mat-icon>share</mat-icon>
+                    </button>
+                </div>
+            </mat-toolbar>
+            <div>
+                <router-outlet />
+            </div>
+        </div>
+    </mat-sidenav-content>
+</mat-sidenav-container>

@@ -1,0 +1,20 @@
+{
+  "students": [
+    {
+      "firstName": "2",
+      "lastName": "2",
+      "grade": 2,
+      "id": "518286"
+    }
+  ],
+  "exams": [],
+  "lessons": [
+    {
+      "name": "Fizika",
+      "grade": 9,
+      "teacherFirstName": "Asgar",
+      "teacherLastName": "Aliyev",
+      "id": "253604"
+    }
+  ]
+}

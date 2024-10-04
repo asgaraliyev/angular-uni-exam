@@ -1,15 +1,9 @@
-import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
-import { MatFormFieldModule } from '@angular/material/form-field';
-import { MatInputModule } from '@angular/material/input';
-import { MatButtonModule } from '@angular/material/button';
 import { Router } from '@angular/router';
 import { ExamService } from '../../services/exam.service';
 @Component({
   selector: 'app-new-exam',
-  standalone: true,
-  imports: [MatFormFieldModule, ReactiveFormsModule,MatInputModule,CommonModule,MatButtonModule],
   templateUrl: './new-exam.component.html',
   styleUrl: './new-exam.component.scss'
 })

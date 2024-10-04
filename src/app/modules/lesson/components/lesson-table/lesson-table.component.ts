@@ -4,11 +4,9 @@ import { LessonFields } from '../../models/lesson.model';
 import { LessonDataSource } from '../../services/lesson.dataSource';
 import { LessonService } from '../../services/lesson.service';
 @Component({
-  // standalone:true,
   selector: 'app-lesson-table',
   templateUrl: './lesson-table.component.html',
   styleUrl: './lesson-table.component.scss',
-  providers: [],
 })
 
 export class LessonTableComponent {

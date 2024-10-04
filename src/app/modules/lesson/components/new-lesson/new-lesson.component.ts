@@ -1,15 +1,11 @@
-import { CommonModule } from '@angular/common';
+
 import { Component } from '@angular/core';
-import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
-import { MatFormFieldModule } from '@angular/material/form-field';
-import { MatInputModule } from '@angular/material/input';
-import { MatButtonModule } from '@angular/material/button';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { LessonService } from '../../services/lesson.service';
 @Component({
   selector: 'app-new-lesson',
-  standalone: true,
-  imports: [MatFormFieldModule, ReactiveFormsModule,MatInputModule,CommonModule,MatButtonModule],
+  
   templateUrl: './new-lesson.component.html',
   styleUrl: './new-lesson.component.scss'
 })

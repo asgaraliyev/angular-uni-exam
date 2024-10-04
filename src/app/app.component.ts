@@ -3,7 +3,7 @@ import { RouterOutlet } from '@angular/router';
 import { MainLayoutComponent } from './core/layouts/main-layout/main-layout.component';
 import { CommonModule } from '@angular/common';
 import { StudentModule } from './modules/student/student.module';
-import { LessonModule } from './modules/lesson/student.module';
+import { LessonModule } from './modules/lesson/lesson.module';
 import { ExamModule } from './modules/exam/exam.module';
 
 @Component({

@@ -1,17 +1,12 @@
 import { Component } from '@angular/core';
-import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
+import { FormBuilder, FormGroup,  Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
-import { MatFormFieldModule } from '@angular/material/form-field';
-import { MatInputModule } from '@angular/material/input';
-import { CommonModule } from '@angular/common';
-import { MatButtonModule } from '@angular/material/button';
+
 import { LessonService } from '../../services/lesson.service';
 import { LessonDataSource } from '../../services/lesson.dataSource';
 
 @Component({
   selector: 'app-edit-lesson',
-  standalone: true,
-  imports: [MatFormFieldModule, ReactiveFormsModule, MatInputModule, CommonModule, MatButtonModule],
   templateUrl: './edit-lesson.component.html',
   styleUrl: './edit-lesson.component.scss'
 })

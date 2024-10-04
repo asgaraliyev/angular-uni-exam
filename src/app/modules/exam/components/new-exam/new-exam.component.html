@@ -1,6 +1,7 @@
 <div class="form-container">
     <form [formGroup]="myForm" class="add-exam flex flex-col" (ngSubmit)="submitHandler()">
         <h3>Add new exam</h3>
+        <app-lesson-selector></app-lesson-selector>
         <mat-form-field appearance="fill">
             <mat-label>First name</mat-label>
             <input matInput formControlName="firstName" required>

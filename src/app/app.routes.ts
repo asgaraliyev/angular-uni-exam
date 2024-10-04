@@ -7,6 +7,7 @@ import { LessonTableComponent } from './modules/lesson/components/lesson-table/l
 import { NewLessonComponent } from './modules/lesson/components/new-lesson/new-lesson.component';
 import { EditLessonComponent } from './modules/lesson/components/edit-lesson/edit-lesson.component';
 import { ExamTableComponent } from './modules/exam/components/exam-table/exam-table.component';
+import { NewExamComponent } from './modules/exam/components/new-exam/new-exam.component';
 
 export const routes: Routes = [
     {
@@ -68,7 +69,7 @@ export const routes: Routes = [
             },
             {
                 path: "exams/new",
-                component: NewLessonComponent,
+                component: NewExamComponent,
                 pathMatch: "full"
 
             },

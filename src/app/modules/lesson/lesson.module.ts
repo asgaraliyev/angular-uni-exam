@@ -9,15 +9,17 @@ import { LessonTableComponent } from './components/lesson-table/lesson-table.com
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatSelectModule } from '@angular/material/select';
 import { MatInputModule } from '@angular/material/input';
-import { LessonSelectorComponent } from './components/lesson-selector/lesson-selector.component';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { NewLessonComponent } from './components/new-lesson/new-lesson.component';
+import { EditLessonComponent } from './components/edit-lesson/edit-lesson.component';
 
 
 
 @NgModule({
   declarations: [
     LessonTableComponent,
-    LessonSelectorComponent
+    NewLessonComponent,
+    EditLessonComponent
   ],
   imports: [
     CommonModule,
@@ -27,13 +29,13 @@ import { ReactiveFormsModule } from '@angular/forms';
     MatFormFieldModule,
     MatSelectModule,
     MatInputModule,
-    MatFormFieldModule, 
-    ReactiveFormsModule
+    MatFormFieldModule,
+    ReactiveFormsModule,
+    FormsModule
 
   ],
   exports: [
     LessonTableComponent,
-    LessonSelectorComponent
   ],
   providers: [
     LessonService,

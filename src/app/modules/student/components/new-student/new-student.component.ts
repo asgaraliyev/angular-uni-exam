@@ -1,15 +1,9 @@
-import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
-import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
-import { MatFormFieldModule } from '@angular/material/form-field';
-import { MatInputModule } from '@angular/material/input';
-import { MatButtonModule } from '@angular/material/button';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { StudentService } from '../../services/student.service';
 @Component({
   selector: 'app-new-student',
-  standalone: true,
-  imports: [MatFormFieldModule, ReactiveFormsModule,MatInputModule,CommonModule,MatButtonModule],
   templateUrl: './new-student.component.html',
   styleUrl: './new-student.component.scss'
 })

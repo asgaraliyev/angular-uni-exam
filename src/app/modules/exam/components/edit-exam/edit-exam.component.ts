@@ -1,17 +1,8 @@
 import { Component } from '@angular/core';
-import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
+import { FormBuilder, FormGroup,  Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
-import { MatFormFieldModule } from '@angular/material/form-field';
-import { MatInputModule } from '@angular/material/input';
-import { CommonModule } from '@angular/common';
-import { MatButtonModule } from '@angular/material/button';
-import { StudentService } from '../../services/exam.service';
-import { StudentDataSource } from '../../services/exam.dataSource';
-
 @Component({
   selector: 'app-edit-student',
-  standalone: true,
-  imports: [MatFormFieldModule, ReactiveFormsModule, MatInputModule, CommonModule, MatButtonModule],
   templateUrl: './edit-exam.component.html',
   styleUrl: './edit-exam.component.scss'
 })

@@ -1,11 +1,9 @@
-
 import { Component } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { FormBuilder, FormGroup,  Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { LessonService } from '../../services/lesson.service';
 @Component({
   selector: 'app-new-lesson',
-  
   templateUrl: './new-lesson.component.html',
   styleUrl: './new-lesson.component.scss'
 })

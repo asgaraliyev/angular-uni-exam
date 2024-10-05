@@ -3,16 +3,11 @@ import { Router } from '@angular/router';
 import { StudentFields } from '../../models/student.model';
 import { StudentDataSource } from '../../services/student.dataSource';
 import { StudentService } from '../../services/student.service';
-import { MatIconModule } from '@angular/material/icon';
-// import { StudentService } from '../../services/student.service';
-// import { StudentDataSource } from '../../services/student.dataSource';
 
 @Component({
-  // standalone:true,
   selector: 'app-student-table',
   templateUrl: './student-table.component.html',
   styleUrl: './student-table.component.scss',
-  providers: [],
 })
 
 export class StudentTableComponent {

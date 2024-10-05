@@ -1,32 +1,53 @@
 import { Component } from '@angular/core';
-import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
+import { AbstractControl, FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { ExamService } from '../../services/exam.service';
+import { LessonDataSource } from '../../../lesson/services/lesson.dataSource';
+import { StudentDataSource } from '../../../student/services/student.dataSource';
+import moment from 'moment';
+
+
+function atLeastOneStudentId(control: AbstractControl) {
+  const studentIds = control.value;
+  if (Array.isArray(studentIds) && studentIds.length > 0) {
+    return null; // Valid
+  }
+  return { atLeastOneRequired: true }; // Invalid
+}
+
 @Component({
   selector: 'app-new-exam',
   templateUrl: './new-exam.component.html',
-  styleUrl: './new-exam.component.scss'
+  styleUrl: './new-exam.component.scss',
+  providers: [LessonDataSource, StudentDataSource]
 })
 export class NewExamComponent {
-  myForm:FormGroup;
-  constructor(private fb:FormBuilder,private examService:ExamService,private router:Router){
-    this.myForm =this.fb.group({
-      firstName:["",Validators.required],
-      lastName:["",Validators.required],
-      grade: ["", [Validators.required, Validators.min(1), Validators.max(11)]]
+  myForm: FormGroup;
+
+  tomorrow = moment().add(1, "day").toDate();
+  constructor(private fb: FormBuilder, private examService: ExamService, private router: Router, public lessonDataSource: LessonDataSource, public studentDataSource: StudentDataSource) {
+    this.myForm = this.fb.group({
+      lessonId: ["", Validators.required],
+      studentIds: [[], [Validators.required, atLeastOneStudentId]],
+      date: [this.tomorrow, [Validators.required]],
     })
   }
+  ngOnInit(): void {
+    console.log("salam")
+    this.lessonDataSource.loadLessons();
+    this.studentDataSource.loadStudents();
 
-  submitHandler():void{
-    if (this.myForm.valid){
+  }
+
+  submitHandler(): void {
+    if (this.myForm.valid) {
       const values = { ...this.myForm.value }
-      values.grade = parseInt(values.grade)
       this.examService.createExam(values).subscribe({
-        next:(response)=>{
+        next: (response) => {
           console.log('Exam created successfully', response)
           this.router.navigate(["exams"])
         },
-        error:(error)=>{
+        error: (error) => {
           console.error('There was an error!', error)
         }
       })

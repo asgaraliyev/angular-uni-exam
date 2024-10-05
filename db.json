@@ -1,13 +1,29 @@
 {
   "students": [
     {
-      "firstName": "2",
-      "lastName": "2",
+      "firstName": "Asgar",
+      "lastName": "Aliyev",
       "grade": 2,
       "id": "518286"
+    },
+    {
+      "id": "618231",
+      "firstName": "Firuze",
+      "lastName": "Aliyeva",
+      "grade": 3
     }
   ],
-  "exams": [],
+  "exams": [
+    {
+      "id": "562590",
+      "lessonId": "253604",
+      "studentIds": [
+        "518286",
+        "618231"
+      ],
+      "date": "2024-10-09T20:00:00.000Z"
+    }
+  ],
   "lessons": [
     {
       "name": "Fizika",
@@ -15,6 +31,13 @@
       "teacherFirstName": "Asgar",
       "teacherLastName": "Aliyev",
       "id": "253604"
+    },
+    {
+      "id": "644838",
+      "name": "2",
+      "grade": 2,
+      "teacherFirstName": "2",
+      "teacherLastName": "2"
     }
   ]
 }

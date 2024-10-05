@@ -8,7 +8,6 @@ import { ExamService } from '../../services/exam.service';
   selector: 'app-exam-table',
   templateUrl: './exam-table.component.html',
   styleUrl: './exam-table.component.scss',
-  providers: [],
 })
 
 export class ExamTableComponent {

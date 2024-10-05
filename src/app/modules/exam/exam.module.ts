@@ -11,13 +11,15 @@ import { NewExamComponent } from './components/new-exam/new-exam.component';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { ReactiveFormsModule } from '@angular/forms';
 import { MatInputModule } from '@angular/material/input';
+import { MatSelectModule } from '@angular/material/select';
+import { MatDatepickerModule } from '@angular/material/datepicker';
 
 
 
 @NgModule({
   declarations: [
     ExamTableComponent,
-    NewExamComponent
+    NewExamComponent,
   ],
   imports: [
     CommonModule,
@@ -27,8 +29,10 @@ import { MatInputModule } from '@angular/material/input';
     LessonModule,
     MatFormFieldModule,
     ReactiveFormsModule,
-    MatInputModule
-
+    MatInputModule,
+    MatIconModule,
+    MatSelectModule,
+    MatDatepickerModule
   ],
   exports: [
     ExamTableComponent,

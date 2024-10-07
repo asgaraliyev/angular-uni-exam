@@ -42,15 +42,28 @@ export class NewExamComponent {
   submitHandler(): void {
     if (this.myForm.valid) {
       const values = { ...this.myForm.value }
-      this.examService.createExam(values).subscribe({
-        next: (response) => {
-          console.log('Exam created successfully', response)
-          this.router.navigate(["exams"])
-        },
-        error: (error) => {
-          console.error('There was an error!', error)
-        }
-      })
+
+      for (let index = 0; index < values.studentIds.length; index++) {
+        const studentId = values.studentIds[index];
+        this.examService.createNewExam({
+          id: values.id,
+          studentId,
+          date: values.date,
+          lessonId: values.lessonId,
+          score: null
+        }).subscribe({
+          next: (response) => {
+            console.log('Student created successfully', response)
+            this.router.navigate(["exams"])
+          },
+          error: (error) => {
+            console.error('There was an error!', error)
+          }
+        })
+
+
+      }
+
     }
   }
 }

@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Observable, catchError, throwError } from 'rxjs';
-import { Exam } from '../models/exam.model';
+import { Exam, NewExam } from '../models/exam.model';
 import { HttpClient } from '@angular/common/http';
 @Injectable({
   providedIn: 'root'
@@ -20,7 +20,10 @@ export class ExamService {
       })
     )
   }
-  createExam(exam: Exam) {
+
+
+
+  createNewExam(exam: Exam) {
     exam.id = parseInt(`${Math.random() * 1000000}`).toString()
     return this.http.post<Exam>(this.createExamAPI, exam, {}).pipe(
       catchError(error => {
@@ -28,8 +31,10 @@ export class ExamService {
         return throwError(() => error)
       })
     )
+
   }
   editExam(exam: Exam) {
+    console.log("exam", exam)
     return this.http.put<Exam>(`http://localhost:3000/exams/${exam.id}`, exam, {}).pipe(
       catchError(error => {
         console.log("error", error)

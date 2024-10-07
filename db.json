@@ -1,27 +1,32 @@
 {
   "students": [
     {
+      "id": "136643",
       "firstName": "Asgar",
       "lastName": "Aliyev",
-      "grade": 2,
-      "id": "518286"
+      "grade": 1
     },
     {
-      "id": "618231",
+      "id": "101717",
       "firstName": "Firuze",
       "lastName": "Aliyeva",
-      "grade": 3
+      "grade": 2
     }
   ],
   "exams": [
     {
-      "id": "562590",
+      "id": "976866",
+      "studentId": "136643",
+      "date": "2024-10-08T17:47:32.855Z",
       "lessonId": "253604",
-      "studentIds": [
-        "518286",
-        "618231"
-      ],
-      "date": "2024-10-09T20:00:00.000Z"
+      "score": 16
+    },
+    {
+      "id": "861417",
+      "studentId": "101717",
+      "date": "2024-10-08T17:47:32.855Z",
+      "lessonId": "253604",
+      "score": 15
     }
   ],
   "lessons": [

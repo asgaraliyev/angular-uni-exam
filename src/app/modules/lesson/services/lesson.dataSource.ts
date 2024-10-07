@@ -26,9 +26,10 @@ export class LessonDataSource extends DataSource<Lesson>{
             this.isLoading$.next(false)
         })
     }
-    loadLessons(): void {
+    loadLessons(searchParams?:URLSearchParams): void {
+        if(!searchParams)searchParams=new URLSearchParams()
         this.isLoading$.next(true)
-        this.lessonService.getLessons().subscribe((lessons) => {
+        this.lessonService.getLessons(searchParams).subscribe((lessons) => {
             this.lessons$.next(lessons)
             this.isLoading$.next(false)
         })

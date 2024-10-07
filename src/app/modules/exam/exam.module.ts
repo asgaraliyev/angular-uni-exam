@@ -9,10 +9,14 @@ import { ExamService, } from './services/exam.service';
 import { LessonModule } from '../lesson/lesson.module';
 import { NewExamComponent } from './components/new-exam/new-exam.component';
 import { MatFormFieldModule } from '@angular/material/form-field';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatInputModule } from '@angular/material/input';
 import { MatSelectModule } from '@angular/material/select';
 import { MatDatepickerModule } from '@angular/material/datepicker';
+import { LessonDataSource } from '../lesson/services/lesson.dataSource';
+import { StudentDataSource } from '../student/services/student.dataSource';
+import { MatDialogActions, MatDialogClose, MatDialogContent, MatDialogTitle } from '@angular/material/dialog';
+import { ChangeGradeModalComponent } from './components/change-grade-modal/change-grade-modal.component';
 
 
 
@@ -20,6 +24,7 @@ import { MatDatepickerModule } from '@angular/material/datepicker';
   declarations: [
     ExamTableComponent,
     NewExamComponent,
+    ChangeGradeModalComponent  
   ],
   imports: [
     CommonModule,
@@ -32,14 +37,23 @@ import { MatDatepickerModule } from '@angular/material/datepicker';
     MatInputModule,
     MatIconModule,
     MatSelectModule,
-    MatDatepickerModule
+    MatDatepickerModule,
+    
+
+    FormsModule,
+    MatDialogTitle,
+    MatDialogContent,
+    MatDialogActions,
+    MatDialogClose,
   ],
   exports: [
     ExamTableComponent,
   ],
   providers: [
     ExamService,
-    ExamDataSource
+    ExamDataSource,
+    LessonDataSource,
+    StudentDataSource
   ]
 })
 export class ExamModule { }

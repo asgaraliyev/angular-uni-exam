@@ -9,20 +9,24 @@
             <td mat-cell *matCellDef="let exam"> {{exam.id}} </td>
         </ng-container>
 
-        <ng-container matColumnDef="lessonId">
+        <ng-container matColumnDef="lessonName">
             <th mat-header-cell *matHeaderCellDef> Lesson </th>
-            <td mat-cell *matCellDef="let exam"> {{exam.lessonId}} </td>
+            <td mat-cell *matCellDef="let exam"> {{exam.lessonName}} </td>
         </ng-container>
 
-        <ng-container matColumnDef="studentId">
+        <ng-container matColumnDef="studentName">
             <th mat-header-cell *matHeaderCellDef> Student </th>
-            <td mat-cell *matCellDef="let exam"> {{exam.studentId}} </td>
+            <td mat-cell *matCellDef="let exam"> {{exam.studentName}} </td>
         </ng-container>
 
 
-        <ng-container matColumnDef="grade">
-            <th mat-header-cell *matHeaderCellDef> Grade </th>
-            <td mat-cell *matCellDef="let exam"> {{exam.grade}} </td>
+        <ng-container matColumnDef="score">
+            <th mat-header-cell *matHeaderCellDef> Score </th>
+            <td mat-cell  *matCellDef="let exam"> {{exam.score}}
+                <button mat-raised-button (click)="openDialog(exam)" >{{
+                    exam.score!==null?"Change score":"Add score"
+                }}</button>
+            </td>
         </ng-container>
 
         <ng-container matColumnDef="date">
@@ -30,12 +34,7 @@
             <td mat-cell *matCellDef="let exam"> {{exam.date}} </td>
         </ng-container>
 
-        <ng-container matColumnDef="edit">
-            <th mat-header-cell *matHeaderCellDef> Edit </th>
-            <td mat-cell *matCellDef="let exam">
-                <mat-icon class="clickable" (click)="editExam(exam.id)" fontIcon="edit"></mat-icon>
-            </td>
-        </ng-container>
+      
         <ng-container matColumnDef="delete">
             <th mat-header-cell *matHeaderCellDef> Delete </th>
             <td mat-cell *matCellDef="let exam">
